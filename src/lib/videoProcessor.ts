@@ -21,8 +21,8 @@ export function extractLastFrame(videoPath: string): Promise<Buffer> {
     const tmpOut = path.join(os.tmpdir(), `last_frame_${Date.now()}.jpg`);
 
     ffmpeg(videoPath)
+      .inputOptions(['-sseof', '-0.5'])
       .outputOptions([
-        '-sseof', '-0.5',
         '-frames:v', '1',
         '-f', 'image2',
         '-q:v', '2',

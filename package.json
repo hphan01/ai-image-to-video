@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "stop": "npx kill-port 3000"
   },
   "dependencies": {
     "@fal-ai/client": "^1.9.5",
